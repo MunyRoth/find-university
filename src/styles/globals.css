@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer&display=swap');
+@import "Home.module.css";
+@import "AboutUs.module.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --khFont: 'Khmer', cursive;
+  --khsubFont: 'Noto Sans Khmer', sans-serif;
+}
+
+* {
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Noto Sans Khmer', sans-serif;
+}
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
+body, h5, p  {
+  margin: 0;
+  padding: 0;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header nav {
+  /*position: fixed;*/
+  /*top: 0;*/
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.2em 0;
+}
+header nav .logo {
+  cursor: pointer;
+}
+header nav .logo img {
+  height: 8.5vh;
+  cursor: pointer;
+}
+/* header nav .menu-icon .fa-times{
+  display: none;
+}
+header nav .menu-icon .fa-times .active{
+  display: block;
+} */
+header nav .nav-items {
+  display: flex;
+  padding: 0 0 0 2.4em;
+}
+header nav .nav-items li {
+  list-style: none;
+  padding: 0 1em;
+}
+header nav .nav-items li a {
+  color: #fff;
+  font-size: 1.1em;
+  font-weight: 500;
+  text-decoration: none;
+}
+header nav .nav-items li a::after {
+  content: "";
+  width: 0;
+  height: 0.08em;
+  background: aqua;
+  display: block;
+  margin: auto;
+  transition: 0.3s;
+}
+.nav-items li a:hover::after {
+  width: 100%;
+}
+.nav-items .active a::after{
+  width: 100%;
+}
+
+header nav form {
+  display: flex;
+  height: 2.4em;
+  padding: 0.1em;
+  width: 25%;
+  background: #1e232b;
+  border-radius: 0.1em;
+  border: 0.1em solid rgba(155, 155, 155, 0.2);
+}
+
+header nav form .search-box  {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+}
+
+header nav form .search-box input{
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  padding-left: 0.3em;
+  background: none;
+}
+header nav form .searched-name {
+  position: absolute;
+  border: 0.1em solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+header nav form .searched-name .search-show {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: .5em;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.288);
+}
+/*when hovering an item:*/
+header nav form .searched-name .search-show:hover{
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+header nav form .searched-name .search-show p{
+  width: 90%;
+  text-align: center;
+
+}
+.search-show img{
+  width: 13%;
+  height: 13%;
+}
+
+
+/*when navigating through the items using the arrow keys:*/
+header nav form .related-active {
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+header nav form button {
+  padding: 0 0.5em;
+  color: #fff;
+  font-size: 1.2em;
+  background: #ff3d00;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.3em;
+}
+header nav form button:hover {
+  background: #e63600;
+}
+header nav .menu-icon,
+header nav .cancel-icon,
+header nav .search-icon {
+  width: 2.4em;
+  text-align: center;
+  margin: 0 2.5em;
+  font-size: 1.2em;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+header nav .menu-icon span,
+header nav .cancel-icon,
+header nav .search-icon {
+  display: none;
+}
+
+/* start prev and next */
+.btn-page-container {
+  height: 8rem;
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: row;
+  margin: 2em auto 2rem;
+  width: max-content;
+  padding: .2vw 1vw;
+  /* padding: 0.3em 0.8em 0.3em 0.8em; */
+  border-radius: 1em;
+  box-shadow: 0 0.2em 1em rgba(0, 0, 0, .2);
+  background-color: rgba(2, 122, 72, 0.234);
+}
+
+.btn-page-container button{
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  font-weight: 600;
+  color: #777;
+  font-size: 0.8em;
+}
+
+.btn-page-container ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+.btn-page-container ul li {
+  list-style: none;
+  margin: 0 0.5em;
+}
+
+.btn-page-container ul li button {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+}
+.btn-page-container ul li button:disabled {
+  cursor: default;
+}
+.btn-page-container ul .active button,
+ul li.page-number:hover button,
+ul li.page-number:active button{
+  background: #333;
+  color: #fff;
+}
+/* end prev and next */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+  padding: 15px;
+  color: #fff;
+  background-color: black;
+}
+
+/* custom responsive */
+@media (max-width: 1245px) {
+  header nav {
+    padding: 0 50px;
+  }
+}
+@media (max-width: 1024px) {
+
+  header nav {
+    padding: 0;
+  }
+  header nav .logo {
+    flex: 2;
+    text-align: center;
+  }
+  header nav .nav-items {
+    position: fixed;
+    z-index: 99;
+    top: 8.5%;
+    width: 100%;
+    left: -100%;
+    height: 100%;
+    padding: 10px 50px 0 50px;
+    text-align: center;
+    background: #14181f;
+    display: inline-block;
+    transition: left 0.3s ease;
+
+  }
+  header nav .nav-items.active {
+    left: 0;
+  }
+  header nav .nav-items li {
+    line-height: 40px;
+    margin: 30px 0;
+  }
+  header nav .nav-items li a {
+    font-size: 20px;
+  }
+  header nav form {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    max-width:none;
+    pointer-events: none;
+    transition: top 0.3s ease;
+  }
+  header nav form.active {
+    top: 8.5%;
+    opacity: 1;
+    pointer-events: auto;
+
+  }
+  header nav .menu-icon {
+    display: block;
+  }
+  header nav .search-icon,
+  header nav .menu-icon span {
+    display: block;
+
+  }
+  header nav .menu-icon span.hide,
+  header nav .search-icon.hide {
+    display: none;
+  }
+  header nav .cancel-icon.show {
+    display: block;
+  }
+  .container .left-side .filter-container {
+    font-size: 14px;
+  }
+  header nav .logo.space {
+    padding: 0 10px 0 0;
+  }
+  header nav .logo img {
+    width: 15.5vh;
+    cursor: pointer;
+  }
+}
+
+
+/* size mobile */
+@media only screen and (min-width: 0) and (max-width: 480px) {
+
+  header nav {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  header nav .nav-items{
+    top: 6.5%;
+  }
+  header nav .menu-icon, header nav .search-icon{
+    padding: 0;
+    margin: 12px;
+    width: fit-content;
+  }
+
+  header nav .logo img{
+    width: 12vh;
+    height: 6vh;
+  }
+  header nav .cancel-icon{
+    margin: 0;
+  }
+
+  header nav form.active {
+    top: 6.5%;
+    opacity: 1;
+    pointer-events: auto;
+
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-self: center;
+    width: 100%;
+    margin: auto;
+    padding: 10px 0;
+    height: fit-content;
+    background-color: #d9d9d9;
+  }
+}

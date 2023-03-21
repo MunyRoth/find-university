@@ -1,0 +1,120 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.container .desc-object {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+.container .desc-object p {
+  font-size: 1rem;
+  padding: 2rem;
+}
+.container .desc-object .row-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .desc-object h1 {
+  border-bottom: 0.2rem solid black;
+}
+
+.container .desc-object .row-container .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.container .desc-object .row-container .row .box {
+  width: 10rem;
+  height: 10rem;
+  background-color: #a9c9ff;
+  background-image: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%);
+
+  border-radius: 25%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.container .ourteam {
+  padding-top: 2rem;
+  width: 100%;
+  height: 30em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 2rem;
+}
+.container .ourteam h1 {
+  border-bottom: 0.2rem solid black;
+  line-height: 2rem;
+}
+.container .ourteam .member {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  text-align: center;
+}
+.container .ourteam .member .member-name {
+  width: 100%;
+  justify-content: center;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: auto;
+}
+.container .ourteam .member .name {
+  width: fit-content;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: auto;
+  border-bottom: 0.2rem solid black;
+}
+
+.container .ourteam .member p {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 2rem;
+  width: 12rem;
+  height: 10rem;
+
+  background-image: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%);
+}
+
+/* .container .ourteam .member .member-name .row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}  */
+/* .container .ourteam .member .member-name p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12rem;
+  height: 10rem;
+  background-image: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%);
+  border-radius: 0.5rem;
+  text-align: center;
+} */
